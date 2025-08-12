@@ -29,7 +29,7 @@
 				  font-family: 'Fira Code', Consolas, Monaco, monospace;
 				  line-height: 1.5;
 				  overflow-x: auto;
-				  margin-top: =2em;
+				  margin-top: 1em;
 				  margin-bottom: 2em;
 				}
 
@@ -40,6 +40,14 @@
 				  text-align: left;
 				  padding: 1em; /* This indents the code inside the block */
 				}
+			</style>
+			<style>
+			  .project-glance{
+			    background:#f6f6f6; border:1px solid #eee; padding:14px 16px; border-radius:6px; 
+			    margin: 1.2em auto; max-width: 90%;
+			  }
+			  .project-glance ul{ margin:0.4em 0 0 1.2em; }
+			  .project-glance li{ margin:0.25em 0; }
 			</style>
 	</head>
 	<body class="single is-preload">
@@ -130,7 +138,8 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#"></a>SQL-Based Analysis of Hospital Capacity & Utilization</h2>
+										<h2><a href="#"></a>SQL-Based Analysis of COVID-19 <br />
+										Hospitalization & Bed Capacity</h2>
 										<!-- When Capacity Runs Thin: Public Health Insights from 1M Hospital Records -->
 										<!-- What 1M U.S. Hospital Records Reveal About COVID Strain -->
 										<p>SQL | Database | Excel | Tableau | Storytelling</p>
@@ -141,29 +150,35 @@
 									</div>
 								</header>
 								<span class="image featured"><img src="images/covid_cover.png" alt="" /></span>
-								<p></p>
-								<br />
-
+								
+								<div class="project-glance">
+								  <h4>At-a-glance</h4>
+								  <ul>
+								    <li><b>Problem:</b> Where did hospitals face the most strain and how did it change over time?</li>
+								    <li><b>Data:</b> ~964K weekly hospital reports (2020–2024) enriched with U.S. Census regions and population estimates.</li>
+								    <li><b>Outcome:</b> South+Midwest accounted for 60%+ of hospitalizations; COVID bed utilization declined YoY through 2023. SQL queries + Tableau visuals expose state/region trends.</li>
+								  </ul>
+								</div>
 					
-								<p><h2 style="margin-bottom: 0.5em;">Analyzing U.S. COVID-19 Hospitalization Trends & Bed Capacity with SQL</h2>
-								In this project, I analyzed nearly 1 million records of hospital-reported COVID-19 data from 2020 to 2024 to assess how the pandemic impacted healthcare capacity across the U.S. Using MySQL and public datasets, this analysis explores how COVID-related hospitalizations evolved across time and geography, while assessing whether hospital resources were effectively utilized or strained. It also identifies which regions, states may require greater attention and preparedness for future health crises.
+								<h2 style="margin-bottom: 0.5em; margin-top: 3.5em;">Analyzing U.S. COVID-19 Hospitalization Trends & Bed Capacity with SQL</h2>
+								<p>In this project, I analyzed nearly 1 million records of hospital-reported COVID-19 data from 2020 to 2024 to assess how the pandemic impacted healthcare capacity across the U.S. Using MySQL and public datasets, this analysis explores how COVID-related hospitalizations evolved across time and geography, while assessing whether hospital resources were effectively utilized or strained. It also identifies which regions, states may require greater attention and preparedness for future health crises.
 								</p>
 
 
-								<p><h4 style="margin-bottom: 0.5em;">Dataset Overview & Preparation</h4>
-								To ensure clean and analyzable data from the original 964,000+ weekly hospital records spanning 2020 to 2024, we performed several key preprocessing steps. Given the large number of columns (128 fields), I narrowed our focus to the most relevant metrics, including total inpatient beds, COVID-related bed usage, confirmed weekly hospitalizations, and renamed long column headers for MySQL compatibility. I also removed duplicate entries and used STR_TO_DATE() to standardize date formats, extracting consistent month and year components to support accurate time-series analysis.
+								<h4 style="margin-bottom: 0.5em;">Dataset Overview & Preparation</h4>
+								<p style="margin-bottom: 0">To ensure clean and analyzable data from the original 964,000+ weekly hospital records spanning 2020 to 2024, we performed several key preprocessing steps. Given the large number of columns (128 fields), I narrowed our focus to the most relevant metrics, including total inpatient beds, COVID-related bed usage, confirmed weekly hospitalizations, and renamed long column headers for MySQL compatibility. I also removed duplicate entries and used STR_TO_DATE() to standardize date formats, extracting consistent month and year components to support accurate time-series analysis.
 								<br>
 								To enhance the depth of analysis, the dataset was further enriched by joining two contextual layers:
 								<ul style="margin-bottom: 0;">
-								<li>Region mapping based on U.S. Census Bureau definitions to enable regional comparisons
-								<li>U.S. Census population estimates (2020–2023) to allow for population-adjusted metrics
-								</li>
+								<li>Region mapping based on U.S. Census Bureau definitions to enable regional comparisons</li>
+								<li>U.S. Census population estimates (2020–2023) to allow for population-adjusted metrics</li>
 								</ul>
 								<span class="image featured"><img src="images/covid_datamapping.png" alt="" style="width: 400px; height: auto; vertical-align: top; margin-left: 15px;" /></span>
 								<!-- This preparation process laid the foundation for faster querying, more meaningful insights, and consistency throughout the downstream analysis and visualizations. -->
+								</p>
 
-								<p><h4 style="margin-bottom: 0.5em;">Understanding System Readiness: Hospital Capacity by State</h4>
-								Before evaluating how the COVID-19 pandemic stressed the U.S. healthcare system, I first quantified the core capacity of hospitals across the country. Using a cleaned dataset of nearly 1 million records, I calculated the average number of total beds, inpatient beds, and COVID-related inpatient usage per hospital, then aggregated those values by state to reflect the typical resource availability throughout the pandemic period. <br>
+								<h4 style="margin-bottom: 0.5em;">Understanding System Readiness: Hospital Capacity by State</h4>
+								<p style="margin-bottom: 0">Before evaluating how the COVID-19 pandemic stressed the U.S. healthcare system, I first quantified the core capacity of hospitals across the country. Using a cleaned dataset of nearly 1 million records, I calculated the average number of total beds, inpatient beds, and COVID-related inpatient usage per hospital, then aggregated those values by state to reflect the typical resource availability throughout the pandemic period. <br>
 								This baseline snapshot of bed capacity helped set the stage for deeper comparisons against actual hospitalization trends and system utilization over time.
 								<br>
 								<span style="font-size: 0.85em;">Note on Aggregation Approach:
@@ -202,10 +217,10 @@
 								<span class="image featured"><img src="images/covid_map1.png" alt="" /></span>
 								<span class="image featured"><img src="images/covid_map2.png" alt="" /></span>
 								</p>
-								<br />
 
-								<p><h4 style="margin-bottom: 0.5em;">Where the Pressure Hit Hardest: Regional Hospitalization Trends</h4>
-								With hospital capacity established, I next analyzed how COVID-19-related hospitalizations varied across U.S. regions and states. By cleaning and standardizing hospitalization data using STR_TO_DATE() and handling outliers (e.g., replacing -999999 with 0), I then joined the data with U.S. Census region mappings to enable aggregated reporting. Using (MAX(CASE WHEN...)) structure and aggregating confirmed adult and pediatric COVID hospitalizations from August 2020 to April 2024, I was able to find key patterns through regional trend comparisons.
+
+								<h4 style="margin-bottom: 0.5em;">Where the Pressure Hit Hardest: Regional Hospitalization Trends</h4>
+								<p style="margin-bottom: 0">With hospital capacity established, I next analyzed how COVID-19-related hospitalizations varied across U.S. regions and states. By cleaning and standardizing hospitalization data using STR_TO_DATE() and handling outliers (e.g., replacing -999999 with 0), I then joined the data with U.S. Census region mappings to enable aggregated reporting. Using (MAX(CASE WHEN...)) structure and aggregating confirmed adult and pediatric COVID hospitalizations from August 2020 to April 2024, I was able to find key patterns through regional trend comparisons.
 								<br>
 								
 								<!-- With hospital capacity established, I next analyzed how COVID-19-related hospitalizations were distributed across U.S. regions and states. By aggregating weekly reported hospital admissions for confirmed adult and pediatric COVID cases, I uncovered which areas faced the greatest burden and how those patterns evolved throughout the pandemic. -->
@@ -266,13 +281,13 @@
 								
 
 
-								<p><h4 style="margin-bottom: 0.5em;">Measuring the Strain: COVID Bed Usage Across States</h4>
+								<h4 style="margin-bottom: 0.5em;">Measuring the Strain: COVID Bed Usage Across States</h4>
 								<!-- Beyond the Count: COVID’s True Impact on Hospital Capacity -->
-								To better understand how severely hospitals were strained by COVID-19, I first calculated each hospital’s COVID usage and inpatient capacity based on weekly report. I then rolled those values up by state and year to estimate how much of each state’s hospital capacity was used for COVID care in a given year. The final metric is the percentage of available inpatient beds that were on average occupied by COVID-related cases, joining the result with a U.S. Census region mapping table to allow geographic comparisons at state-level yearly totals.
+								<p style="margin-bottom: 0">To better understand how severely hospitals were strained by COVID-19, I first calculated each hospital’s COVID usage and inpatient capacity based on weekly report. I then rolled those values up by state and year to estimate how much of each state’s hospital capacity was used for COVID care in a given year. The final metric is the percentage of available inpatient beds that were on average occupied by COVID-related cases, joining the result with a U.S. Census region mapping table to allow geographic comparisons at state-level yearly totals.
 
 								<!-- To ensure accuracy and avoid bias from inconsistent hospital reporting,  -->
 
-								To better understand how severely hospitals were strained by COVID-19, I analyzed the percentage of inpatient capacity that was occupied by COVID patients. 
+								<!-- To better understand how severely hospitals were strained by COVID-19, I analyzed the percentage of inpatient capacity that was occupied by COVID patients.  -->
 
 								<pre><code class="language-sql">
 			WITH yearly AS (
@@ -305,8 +320,8 @@
 
 
 
-								<p><h4 style="margin-bottom: 0.5em;">Unequal Burdens: Population-Normalized Hospitalization Patterns</h4>
-								To enable fair cross-state comparisons, I adjusted total hospitalization counts by population using U.S. Census estimates from 2020 to 2023. This helped highlight states where hospitalizations were disproportionately high relative to the number of residents. Additionally, I calculated the number of hospitals per 100,000 people to understand access and availability across states. These metrics revealed key imbalances between hospital resources and patient needs.
+								<h4 style="margin-bottom: 0.5em;">Unequal Burdens: Population-Normalized Hospitalization Patterns</h4>
+								<p style="margin-bottom: 0">To enable fair cross-state comparisons, I adjusted total hospitalization counts by population using U.S. Census estimates from 2020 to 2023. This helped highlight states where hospitalizations were disproportionately high relative to the number of residents. Additionally, I calculated the number of hospitals per 100,000 people to understand access and availability across states. These metrics revealed key imbalances between hospital resources and patient needs.
 
 								<pre><code class="language-sql">
 			-- Total confirmed COVID hospitalizations per state, year 
@@ -357,19 +372,19 @@
 								</p>
 
 
-								<p><h4 style="margin-bottom: 0.5em;">Learning Highlights</h4>
-								Working through this project gave me more than just SQL practice — it challenged me to think end-to-end, from raw data to real-world impact:
+								<h4 style="margin-bottom: 0.5em;">Learning Highlights</h4>
+								<p style="margin-bottom: 0">Working through this project gave me more than just SQL practice — it challenged me to think end-to-end, from raw data to real-world impact:
 								<ul style="margin-bottom: 0;">
-								<li>Cleaned and prepared over 960,000 hospital records with missing values, irregular formats, and outliers
+								<li>Cleaned and prepared over 960,000 hospital records with missing values, irregular formats, and outliers</li>
 
-								<li>Enriched raw data with region mappings and population estimates to support contextual, population-adjusted insights
+								<li>Enriched raw data with region mappings and population estimates to support contextual, population-adjusted insights</li>
 
-								<li>Wrote structured SQL queries using nested subqueries, JOINs, CASE WHEN logic, and CTEs to uncover meaningful patterns
+								<li>Wrote structured SQL queries using nested subqueries, JOINs, CASE WHEN logic, and CTEs to uncover meaningful patterns</li>
 
-								<li>Normalized date fields using STR_TO_DATE() to enable consistent time-series analysis
+								<li>Normalized date fields using STR_TO_DATE() to enable consistent time-series analysis</li>
 								
-								<li>Thought critically about how hospital capacity, demand surges, and regional geography influenced operational outcomes
-								</li></ul>
+								<li>Thought critically about how hospital capacity, demand surges, and regional geography influenced operational outcomes</li>
+								</ul>
 								More than anything, this project deepened my confidence in working with messy, real-world datasets and strengthened my ability to turn ambiguity into clarity through structured analysis and thoughtful storytelling.
 								</p>
 

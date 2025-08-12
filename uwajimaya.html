@@ -10,6 +10,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="future-assets/css/main.css" />
+
+		<style>
+		  .project-glance{
+		    background:#f6f6f6; border:1px solid #eee; padding:14px 16px; border-radius:6px; 
+		    margin: 1.2em auto; max-width: 90%;
+		  }
+		  .project-glance ul{ margin:0.4em 0 0 1.2em; }
+		  .project-glance li{ margin:0.25em 0; }
+		</style>
+
 	</head>
 	<body class="single is-preload">
 
@@ -99,9 +109,9 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">Customer Segmentation & <br />
-										Profitability Analysis</a></h2>
-										<p>Python | Tableau | Excel | Business Intelligence | Stroytelling</p>
+										<h2><a href="#">B2B Customer Segmentation <br />
+										& Profitability Analysis</a></h2>
+										<p>Python | Tableau | Excel | Business Intelligence | Storytelling</p>
 									</div>
 									<div class="meta">
 										<time class="published" datetime="2015-11-01">June 3, 2025</time>
@@ -109,8 +119,18 @@
 									</div>
 								</header>
 								<span class="image featured"><img src="images/uwajimaya.jpg" alt="" /></span>
-								<p><h2 style="margin-bottom: 0.5em;">About Uwajimaya:</h2>
-								Uwajimaya is a well-known Asian grocery and specialty food retailer based in the Pacific Northwest, serving both individual consumers and restaurant clients through its Food Service International (FSI) division. With a focus on authentic Asian products and regional distribution, Uwajimaya plays a central role in supplying a wide variety of restaurants across Washington and neighboring states.</p>
+
+								<div class="project-glance">
+								  <h4>At-a-glance</h4>
+								  <ul>
+								    <li><b>Problem:</b> Identify profit drivers and high-value customer segments for B2B sales.</li>
+								    <li><b>Data:</b> 926K+ transactions across 774 customers and 1,400+ products; geocoded customer locations.</li>
+								    <li><b>Outcome:</b> Top/Loyal segments drove 60%+ of revenue; identified high-margin product categories for pricing optimization; 97 nearby similar restaurants identified for expansion.</li>
+								  </ul>
+								</div>
+
+								<h2 style="margin-bottom: 0.5em; margin-top: 3.5em;">About Uwajimaya:</h2>
+								<p>Uwajimaya is a well-known Asian grocery and specialty food retailer based in the Pacific Northwest, serving both individual consumers and restaurant clients through its Food Service International (FSI) division. With a focus on authentic Asian products and regional distribution, Uwajimaya plays a central role in supplying a wide variety of restaurants across Washington and neighboring states.</p>
 								<p>As part of the University of Washington MSBA Capstone, our team partnered with Uwajimaya’s Food Service International (FSI) division to analyze over 920,000 transaction records, aiming to generate actionable insights in customer behavior, product profitability, and delivery optimization. 
 								Our approach leveraged a combination of clustering, customer segmentation (RFM), and geospatial analysis to support strategic decision-making. We focused on identifying key growth opportunities through high-impact products, profit-driving customer segments, and untapped delivery potential.
 								Uwajimaya sought to better understand which products were most profitable, how customer value varied across, and how delivery routes might be further optimized for insights that would support both operational efficiency and targeted customer engagement.
@@ -120,22 +140,21 @@
 
 
 					
-								<p><h2 style="margin-bottom: 0.5em;">Data Cleaning & Preparation</h2>
-								Before diving into the analysis, we conducted a thorough data preparation process to ensure the quality and consistency of the dataset. This foundational step was essential for enabling downstream profitability analysis, segmentation, and geospatial modeling.
-								<br>
+								<h2 style="margin-bottom: 0.5em;">Data Cleaning & Preparation</h2>
+								<p style="margin-bottom: 0">Before diving into the analysis, we conducted a thorough data preparation process to ensure the quality and consistency of the dataset. This foundational step was essential for enabling downstream profitability analysis, segmentation, and geospatial modeling.<br>
 								<strong>Key tasks included:</strong>
-								<ul>
-								<li><strong>Customer Record Consolidation:</strong> Merged duplicate customer entries and standardized customer identifiers to ensure a unified customer profile across all datasets.
-								<li><strong>Address Standardization:</strong> Cleaned and formatted customer address fields to ensure accuracy and compatibility with geocoding tools.
-								<li><strong>Missing Value Handling:</strong> Addressed incomplete records through logical imputation and validation techniques.
-								<li><strong>Feature Engineering:</strong> Created derived metrics such as total profit, category-level performance, and customer-level RFM scores.
-								<li><strong>Geocoding with Google Maps API:</strong> Since the original dataset did not contain latitude and longitude, we implemented a Python-based solution using the Google Maps Geocoding API to convert customer addresses into precise geographic coordinates. This step was critical for enabling distance calculations, route planning, and potential new customer identification.
+								<ul style="margin-top: 0;">
+								<li><strong>Customer Record Consolidation:</strong> Merged duplicate customer entries and standardized customer identifiers to ensure a unified customer profile across all datasets.</li>
+								<li><strong>Address Standardization:</strong> Cleaned and formatted customer address fields to ensure accuracy and compatibility with geocoding tools.</li>
+								<li><strong>Missing Value Handling:</strong> Addressed incomplete records through logical imputation and validation techniques.</li>
+								<li><strong>Feature Engineering:</strong> Created derived metrics such as total profit, category-level performance, and customer-level RFM scores.</li>
+								<li><strong>Geocoding with Google Maps API:</strong> Since the original dataset did not contain latitude and longitude, we implemented a Python-based solution using the Google Maps Geocoding API to convert customer addresses into precise geographic coordinates. This step was critical for enabling distance calculations, route planning, and potential new customer identification.</li>
 								</ul>
 								</p>
 
 
-								<p><h2 style="margin-bottom: 0.5em;">Product & Category Profitability</h2>
-								We began by analyzing overall profitability across five key product categories: Meat, Grocery, Produce, Non-Food, and Seafood.
+								<h2 style="margin-bottom: 0.5em;">Product & Category Profitability</h2>
+								<p>We began by analyzing overall profitability across five key product categories: Meat, Grocery, Produce, Non-Food, and Seafood.
 								Profitability was calculated using the difference between sales price and cost per unit, multiplied by amount shipped. Meat contributed the largest share of total profit (42%), followed by Grocery (38%), despite having lower average product margins. Produce and Non-Food products had smaller overall contributions but stood out for their relatively high profit margins, often exceeding 20%.
 								We then examined profitability at a more granular level, identifying which subcategories and individual products were key profit drivers. For example, Poultry: Frozen alone generated over $5.2M in profit, though it carried lower margins. In contrast, Rice and American Vegetables offered higher margins despite smaller volumes. At the product level, Chicken Thigh stood out for its large profit contribution due to high sales volume, while Beef Steer Flank stood out for their exceptionally high margins despite its low sales volume, which signal opportunities for premium pricing or selective upselling. This comparison helped us distinguish between volume drivers and margin leaders, the two essential levers for building a balanced and high-performing product portfolio.
 
@@ -145,31 +164,32 @@
 								</p>
 
 							
-								<p><h2>Product and Price Analysis</h2>
+								<h2>Product and Price Analysis</h2>
 								<h4 style="margin-bottom: 0.5em;">Four-Quadrant Analysis</h4>
-								With a clearer understanding of category-level contribution and margins, we then drilled down to the individual product level to evaluate performance based on both unit profitability and sales volume. This allowed us to identify opportunities for pricing adjustments or strategic promotion.
+								<p style="margin-bottom: 0">With a clearer understanding of category-level contribution and margins, we then drilled down to the individual product level to evaluate performance based on both unit profitability and sales volume. This allowed us to identify opportunities for pricing adjustments or strategic promotion.
 
 								We focus on the top 10 products based on total profits and plotted them in a two-dimensional space using average unit profit and total quantity. These were divided into four quadrants based on whether each metric was above or below the dataset average, giving us a clear, objective view of product positioning:
 								<br />
 								<ul>
 									<li><strong>Top Right:</strong> Products with above-average unit profit and above-average sales volume<br>
-								These are balanced performers that contribute on both revenue and volume fronts. CHX-Thigh fits here, with strong shipment numbers and slightly above-average per-unit profit.
+								These are balanced performers that contribute on both revenue and volume fronts. CHX-Thigh fits here, with strong shipment numbers and slightly above-average per-unit profit.</li>
 									<li><strong>Top Left:</strong> Products with below-average unit profit but above-average sales volume<br>
-								These are steady movers with limited margin. Rice-Calrose, for instance, just exceeded the average volume line, signaling consistent demand despite tighter profitability.
+								These are steady movers with limited margin. Rice-Calrose, for instance, just exceeded the average volume line, signaling consistent demand despite tighter profitability.</li>
 									<li><strong>Bottom Right:</strong> Products with above-average unit profit but below-average sales volume<br>
-								These tend to be niche or high-end items. Beef-Steer Flank, while not a volume driver, delivers strong margin per unit.
+								These tend to be niche or high-end items. Beef-Steer Flank, while not a volume driver, delivers strong margin per unit.</li>
 									<li><strong>Bottom Left:</strong> Products with below-average unit profit and below-average sales volume<br>
-								A significant portion of the product catalog falls in this quadrant. Prioritize strategic reviews of these items whether through pricing optimization, cost reduction, or repositioning to enhance overall performance.
-
+								A significant portion of the product catalog falls in this quadrant. Prioritize strategic reviews of these items whether through pricing optimization, cost reduction, or repositioning to enhance overall performance.</li>
 								</ul>
+								</p>
+
 
 								<h4 style="margin-bottom: 0.5em;">K-Means Clustering</h4>
-								To supplement our quadrant-based analysis, we applied K-Means clustering using unit profit and total quantity as input features. Based on interpretability and the elbow method, we selected k=3 to segment the top 10 products into meaningful groups.
+								<p style="margin-bottom: 0">To supplement our quadrant-based analysis, we applied K-Means clustering using unit profit and total quantity as input features. Based on interpretability and the elbow method, we selected k=3 to segment the top 10 products into meaningful groups.
 								<br />
 								<ul style="margin-bottom: 0em;">
-									<li><strong>Cluster 1 (Blue):</strong> CHX-Thigh stood out with exceptionally high sales volume, forming its own cluster.
-									<li><strong>Cluster 0 (Red):</strong> Rice-Calrose and Noodle-Yakisoba were grouped together, reflecting moderate volume and mid-to-low profit, indicating a shared commercial profile.
-									<li><strong>Cluster 2 (Green):</strong> The remaining products, including niche or low-volume items like Beef-Steer Flank and Oil-Soy Bean, formed a distinct cluster due to their lower scale or specialized role.
+									<li><strong>Cluster 1 (Blue):</strong> CHX-Thigh stood out with exceptionally high sales volume, forming its own cluster.</li>
+									<li><strong>Cluster 0 (Red):</strong> Rice-Calrose and Noodle-Yakisoba were grouped together, reflecting moderate volume and mid-to-low profit, indicating a shared commercial profile.</li>
+									<li><strong>Cluster 2 (Green):</strong> The remaining products, including niche or low-volume items like Beef-Steer Flank and Oil-Soy Bean, formed a distinct cluster due to their lower scale or specialized role.</li>
 								</ul>
 
 								Clustering reinforced insights from the quadrant analysis and revealed product groupings that might not be obvious through manual review. These groupings can inform targeted actions, such as promotion, bundling, or re-evaluation based on shared performance patterns.
@@ -182,23 +202,25 @@
 								</p>
 
 								
-								<p><h2 style="margin-bottom: 0.5em;">Customer Segmentation Using RFM</h2>
-								While product-level analysis gave us a strong understanding of what sells, we also wanted to understand our customer behavior. To do this, we applied an RFM (Recency, Frequency, Monetary) segmentation model to classify engagement and group customers based on their purchase behaviors to identify high-value segments for targeted action.
-								<ul>
+								<h2 style="margin-bottom: 0.5em;">Customer Segmentation Using RFM</h2>
+								<p style="margin-bottom: 0">While product-level analysis gave us a strong understanding of what sells, we also wanted to understand our customer behavior. To do this, we applied an RFM (Recency, Frequency, Monetary) segmentation model to classify engagement and group customers based on their purchase behaviors to identify high-value segments for targeted action.
+								<ul style="margin-bottom: 1em;">
 								<li><strong>Recency</strong> measures how recently a customer has placed an order</li>
 								<li><strong>Frequency</strong> reflects how often they’ve ordered over the period analyzed</li>
 								<li><strong>Monetary</strong> captures the total amount spent</li>
 								</ul>
+								
 								R score was based on how recent the customer had made an purchase [0,2,7,14,30]. F and M scores were calculated using percentile ranks across all customers. Each dimension was scored from 1 to 5 (5 the highest and 1 the lowest score), and summed to derive a total RFM score between 3 and 15.
 								Each customer received an RFM score, and we used these scores to segment them into six segments: Top, Loyal, Developing, At Risk, Inactive, and New Customers. 
-								<ul>
-								<li><strong>Top</strong> (RFM ≥ 14): Highly engaged, high-spending customers who recently placed orders
-								<li><strong>Loyal</strong> (RFM 11–13): Reliable, consistently active customers with moderate to high spending
-								<li><strong>Developing</strong> (RFM 7–10): Moderate engagement, potential to grow
-								<li><strong>At Risk</strong> (RFM < 7): Low engagement, likely to churn
-								<li><strong>New</strong>: First-time buyers within the last 14 days
-								<li><strong>Inactive</strong>: No purchases in over six months
+								<ul style="margin-bottom: 1em;">
+								<li><strong>Top</strong> (RFM ≥ 14): Highly engaged, high-spending customers who recently placed orders</li>
+								<li><strong>Loyal</strong> (RFM 11–13): Reliable, consistently active customers with moderate to high spending</li>
+								<li><strong>Developing</strong> (RFM 7–10): Moderate engagement, potential to grow</li>
+								<li><strong>At Risk</strong> (RFM < 7): Low engagement, likely to churn</li>
+								<li><strong>New</strong>: First-time buyers within the last 14 days</li>
+								<li><strong>Inactive</strong>: No purchases in over six months</li>
 								</ul> 
+								
 								This customer segmentation analysis revealed that while Developing, Loyal, and Top Customers make up the majority of the client base, a significant portion(over 230 customers) fall into At Risk or Inactive categories, signaling churn potential. Notably, core restaurant types like Japanese Teriyaki, Thai Full Service, and Japanese Full Service appear across all segments, from Top to Inactive. This shows that customer type alone doesn’t determine whether a customer is high- or low-performing. Instead, how customers behave—such as how recently they ordered, how often they purchase, and how much they spend—plays a more important role in understanding their value. Within high-value segments like Top and Loyal, these core restaurant types are especially prominent, reinforcing their importance to Uwajimaya’s business. However, the same types also appear frequently in At Risk and Inactive segments, suggesting that even strong-fit customers are susceptible to disengagement. Proactive retention efforts, such as personalized outreach or targeted incentives may help recover value from these at-risk groups. While Inactive customers may present fewer immediate opportunities, the Developing segment could represent untapped growth potential. Many Developing customers fall into non-core categories such as “Other Restaurants” or are located out of state, which may contribute to lower engagement. Identifying promising accounts within this group and offering targeted support or onboarding strategies could help move them toward higher-value segments over time.
 								<span class="image featured"><img src="images/total2.png" alt="" /></span>
 								</p>
@@ -208,7 +230,7 @@
 
 								
 								<h2 style="margin-bottom: 0.5em;">Geospatial Delivery Optimization & Customer Expansion</h2>
-								Following our customer segmentation, we extended our analysis geographically to explore delivery efficiency and expansion opportunities. Since the original dataset did not include latitude and longitude, we geocoded customer addresses using the Google Maps API into precise geographic coordinates and plotted them spatially.
+								<p>Following our customer segmentation, we extended our analysis geographically to explore delivery efficiency and expansion opportunities. Since the original dataset did not include latitude and longitude, we geocoded customer addresses using the Google Maps API into precise geographic coordinates and plotted them spatially.
 								Our analysis focused on high-value (Top and Loyal) customers located near the outer edges of Uwajimaya’s current delivery zones. Using these as anchor points, we conducted a proximity based search and identified 97 nearby Asian restaurants within a 1-kilometer radius that closely resembled existing high-value clients in both behavior and profile. These findings represent strong candidates for strategic customer acquisition without requiring major changes to current delivery footprint. <br>
 								To explore delivery optimization potential, we calculated geodesic distances between customers and simulated routing paths using the Nearest Neighbor heuristic. While we lacked detailed delivery route data, this modeling helped reveal geographic clusters where delivery density could be improved and travel redundancy reduced. These findings lay the groundwork for more efficient vehicle utilization and smarter expansion into adjacent zones with concentrated customer value.
 								<!-- To visualize delivery optimization potential, we calculated geodesic (great-circle) distances between customers and simulated routing paths using the Nearest Neighbor heuristic. This revealed several geographic clusters where delivery density could be increased and redundant travel minimized, suggesting opportunities for more efficient vehicle utilization and service consolidation. While detailed delivery route data was limited, this geospatial modeling provided a practical foundation for future logistics planning and targeted customer outreach in high-density areas. -->
@@ -216,11 +238,9 @@
 								</p>
 
 
-								<br />
-
 					
-								<p><h2 style="margin-bottom: 0.5em;">Final Takeaways & Recommendations</h2>
-								Our analysis provided a holistic view of customer behavior, product performance, and geographic reach for Uwajimaya’s Food Service International division. By connecting transaction-level data with behavioral and spatial patterns, we identified multiple opportunities to enhance profitability, strengthen customer relationships, and expand intelligently.
+								<h2 style="margin-bottom: 0.5em;">Final Takeaways & Recommendations</h2>
+								<p>Our analysis provided a holistic view of customer behavior, product performance, and geographic reach for Uwajimaya’s Food Service International division. By connecting transaction-level data with behavioral and spatial patterns, we identified multiple opportunities to enhance profitability, strengthen customer relationships, and expand intelligently.
 								<!-- This analysis uncovered both near-term wins and long-term strategic opportunities for Uwajimaya’s Food Service International (FSI) division. By connecting transactional data to customer behavior, product economics, and logistical patterns, we developed a set of tailored recommendations across product strategy, customer engagement, and delivery operations.  -->
 								<br>
 								<strong>Product Strategy:</strong>

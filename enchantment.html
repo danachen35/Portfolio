@@ -10,6 +10,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="future-assets/css/main.css" />
+
+		<style>
+		  .project-glance{
+		    background:#f6f6f6; border:1px solid #eee; padding:14px 16px; border-radius:6px; 
+		    margin: 1.2em auto; max-width: 90%;
+		  }
+		  .project-glance ul{ margin:0.4em 0 0 1.2em; }
+		  .project-glance li{ margin:0.25em 0; }
+		</style>
+
 	</head>
 	<body class="single is-preload">
 
@@ -100,7 +110,7 @@
 								<header>
 									<div class="title">
 										<h2><a href="#">Chasing the Enchantments: A Data-Driven Approach to Beating the Permit Odds</a></h2>
-										<p>Tableau | Python | Business Intelligence | Data Stroytelling</p>
+										<p>Tableau | Python | Business Intelligence | Data Storytelling</p>
 									</div>
 									<div class="meta">
 										<time class="published" datetime="2015-11-01">March 8, 2025</time>
@@ -108,8 +118,18 @@
 									</div>
 								</header>
 								<span class="image featured"><img src="images/enchant_cover3.jpg" alt="" /></span>
-								<p><h4 style="margin-bottom: 0.5em;">Intro</h4>
-								The Enchantments, nestled in Washington State’s Alpine Lakes Wilderness, are among the most coveted backcountry hiking destinations in the Pacific Northwest. With pristine alpine lakes, jagged granite peaks, and fragile ecosystems, the area draws tens of thousands of hopeful hikers each year. To protect this landscape, access is controlled by a competitive permit lottery system. Applicants submit preferred zones, dates, and group sizes, but with overall success rates often below 10%, landing a permit can feel like a roll of the dice, especially for the ultra-popular Core Enchantment Zone, which sees success rates dip below 1%.
+
+								<div class="project-glance">
+								  <h4>At-a-glance</h4>
+								  <ul>
+								    <li><b>Problem:</b> Lottery odds feel like pure luck; applicants want data-backed strategies.</li>
+								    <li><b>Data:</b> 42K+ 2024 applications + 40+ years of daily weather to analyze zone, timing, group size.</li>
+								    <li><b>Outcome:</b> Patterns show higher success in less-trafficked zones and midweek dates; solo or 2-person groups win more. Interactive dashboard lets users simulate best dates.</li>
+								  </ul>
+								</div>
+
+								<h4 style="margin-bottom: 0.5em; margin-top: 3.5em;">Intro</h4>
+								<p>The Enchantments, nestled in Washington State’s Alpine Lakes Wilderness, are among the most coveted backcountry hiking destinations in the Pacific Northwest. With pristine alpine lakes, jagged granite peaks, and fragile ecosystems, the area draws tens of thousands of hopeful hikers each year. To protect this landscape, access is controlled by a competitive permit lottery system. Applicants submit preferred zones, dates, and group sizes, but with overall success rates often below 10%, landing a permit can feel like a roll of the dice, especially for the ultra-popular Core Enchantment Zone, which sees success rates dip below 1%.
 								<br />
 								Everyone says the Enchantments lottery is just luck — but what if it isn’t? What if winning a permit is less about chance and more about knowing how to play the game?
 								<br>
@@ -121,16 +141,16 @@
 								</p>
 
 
-								<p><h4 style="margin-bottom: 0.5em;">Zone Popularity vs. Success Rates</h4>
-								Not all zones are created equal — especially when it comes to your chances.
+								<h4 style="margin-bottom: 0.5em;">Zone Popularity vs. Success Rates</h4>
+								<p>Not all zones are created equal — especially when it comes to your chances.
 								The Core Enchantment Zone may be the most in-demand zone in the wilderness permit system, but it's also the most competitive by far, with over 81,000 selections and a success rate below 1%. On the opposite end, the Eightmile/Caroline Zone often being overlooked, had fewer than 3,000 selections yet emerged with the highest success rate (11.8%).
 								For applicants seeking to tilt the odds in their favor, understanding zone dynamics is crucial. Choosing less-trafficked zones like Stuart or Snow can significantly increase your chances, especially when prioritized in early choice ranks. Sometimes, the best strategy is to go where fewer others are looking.
 								<span class="image featured"><img src="images/enchant_zoneresult.png" alt="" /></span>
 								</p>
 
 
-								<p><h4 style="margin-bottom: 0.5em;">Timing Insights</h4>
-								Timing plays a crucial role in shaping your chances of winning the Enchantments lottery. To explore this, I first looked at application volume and success rates across different months and weekdays.
+								<h4 style="margin-bottom: 0.5em;">Timing Insights</h4>
+								<p style="margin-bottom: 0">Timing plays a crucial role in shaping your chances of winning the Enchantments lottery. To explore this, I first looked at application volume and success rates across different months and weekdays.
 								The overview charts below reveal a distinct inverse relationship between popularity and success. August drew the highest volume with over 42,000 applications, but had one of the lowest success rates at just 1.19%. In contrast, May and October saw fewer applicants and correspondingly, higher success rates of 11.28% and 5.52%, respectively. A similar trend played out across weekdays: Friday received nearly 27,000 entries but had the lowest success rate of only 1.34%, while Sunday and Monday offered the highest odds of winning—around 3.5% and 3.09%, respectively.
 								<!-- August, the peak of hiking season, receives the highest volume of applications with over 42,000 choice selections. However, popularity comes with competition. August also sees the lowest success rate at just 1.19%. July and September follow similar patterns of high demand paired with low odds. In contrast, May emerges as a hidden gem. Despite fewer applications, its success rate soars to 11.28%, the highest of any month. October also offers better than average odds, with a 5.52% success rate and significantly lighter application volume. 
 								This trend holds true on the weekly level as well. Fridays attract the largest number of applicants for over 26,000, but also yield the lowest success rate at just 1.34%. Meanwhile, Sundays and Mondays offer better chances of success, with a rates of 3.5% and 3.09% respectively though they receive fewer entries. The data suggests that applicants who opt for less crowded time slots, both by month and weekday, can meaningfully boost their odds of securing a permit especially. -->
@@ -147,8 +167,8 @@
 								</p>
 
 
-								<p><h4 style="margin-bottom: 0.5em;">Group Size Analysis</h4>
-								When it comes to increasing your odds in the Enchantments lottery, group size plays a surprisingly decisive role, yet it's one of the most commonly overlooked factors. Solo applicants (group size = 1) saw the highest overall success rate at 5.51%, significantly outperforming all larger group sizes. In contrast, groups of 4–7 people, which made up the majority of entries, consistently hovered just under 2%, with group size 7 hitting the lowest odds at only 1.64%. This trend suggests a strong inverse relationship between group size and success likely due to the limited number of available permits per day, where accommodating larger groups becomes more difficult.
+								<h4 style="margin-bottom: 0.5em;">Group Size Analysis</h4>
+								<p>When it comes to increasing your odds in the Enchantments lottery, group size plays a surprisingly decisive role, yet it's one of the most commonly overlooked factors. Solo applicants (group size = 1) saw the highest overall success rate at 5.51%, significantly outperforming all larger group sizes. In contrast, groups of 4–7 people, which made up the majority of entries, consistently hovered just under 2%, with group size 7 hitting the lowest odds at only 1.64%. This trend suggests a strong inverse relationship between group size and success likely due to the limited number of available permits per day, where accommodating larger groups becomes more difficult.
 								<!-- While applicants often focus on dates and zones, group size quietly plays a major role in lottery outcomes. In 2024, the majority of applications were for groups of four, making it the most common party size by a wide margin. However, being part of the crowd comes at a cost: groups of four had a success rate of just 2.03%. In contrast, solo applicants had the highest success rate at 5.51%, despite making up the smallest portion of entries. This suggests that smaller groups—particularly groups of one or two—enjoy a distinct statistical advantage. As group size increases, the success rate drops consistently, with groups of seven and eight seeing success rates fall below 1.65%. This isn’t surprising when you consider how permits are allocated. Each additional group member increases the demand for limited daily quotas. In effect, applying with a larger group magnifies the odds against you—especially when combined with high-demand zones or weekends. -->
 								<br>
 								Digging deeper into zone-specific trends, the disparity becomes even more pronounced. For example, solo applicants targeting the Eightmile/Caroline Zone enjoyed an impressive 16.28% success rate, while larger groups applying for popular zones like the Core Enchantments saw their odds drop drastically—down to just 0.33% for groups of 7. Across nearly every zone, smaller groups consistently achieved higher success rates likely benefiting from greater flexibility in permit allocation and fewer logistical constraints on group sizes.
@@ -156,8 +176,8 @@
 								</p>
 								
 
-								<p><h4 style="margin-bottom: 0.5em;">Weather Trends & Seasonality</h4>
-								When applying for a permit to the Enchantments, most applicants focus on beating the odds—but what if you could also optimize for good weather? By combining lottery data with historical climate trends, it’s possible to improve not just your chances of getting in, but also your experience once you're there.
+								<h4 style="margin-bottom: 0.5em;">Weather Trends & Seasonality</h4>
+								<p>When applying for a permit to the Enchantments, most applicants focus on beating the odds—but what if you could also optimize for good weather? By combining lottery data with historical climate trends, it’s possible to improve not just your chances of getting in, but also your experience once you're there.
 								<br>
 								To understand seasonal weather patterns, I first analyzed over 40 years of historical data (1981–2024). The results revealed a reliable window of favorable conditions typically between mid-July and late August—when temperatures are warmer and precipitation is minimal. This period tends to offer the best balance of dryness and comfort, making it a practical target for most applicants.
 								<span class="image featured"><img src="images/enchant_weatherall.png" alt="" /></span>
@@ -167,8 +187,8 @@
 								</p>
 
 
-								<p><h4 style="margin-bottom: 0.5em;">Best Selection Strategy</h4>
-								To bring it all together, I built an interactive dashboard that lets applicants explore their optimal strategy based on personal preferences. By selecting a target zone and preferred group size, users can immediately see which months and weekdays historically offer better odds. For those who also value ideal hiking conditions, optional weather filters allow users to pinpoint past application dates that aligned with warmer, drier days. This tool transforms guesswork into informed decision making, helping applicants find the best fit entry dates based on what matters most to them.
+								<h4 style="margin-bottom: 0.5em;">Best Selection Strategy</h4>
+								<p style="margin-bottom: 0">To bring it all together, I built an interactive dashboard that lets applicants explore their optimal strategy based on personal preferences. By selecting a target zone and preferred group size, users can immediately see which months and weekdays historically offer better odds. For those who also value ideal hiking conditions, optional weather filters allow users to pinpoint past application dates that aligned with warmer, drier days. This tool transforms guesswork into informed decision making, helping applicants find the best fit entry dates based on what matters most to them.
 								<span class="image featured"><img src="images/enchant_dashboard.png" alt="" /></span>
 								
 								What if getting into the Enchantments wasn’t just a game of luck? With lottery and weather data, there’s a smarter way to plan and win.
